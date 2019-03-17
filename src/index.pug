@@ -10,6 +10,76 @@ html(lang="en")
   body
     .wrapper
       .maincontent
-        +image('content/user.jpg', 'user-pic')
-        +icon('link', 'link-class')
-        .icon-bg
+        .welcome_section
+          //style=`background: url('${require('./images/content/welcome_bg.png')}')
+        
+        
+          section.hero
+            .container.hero_container
+              header.header
+              .logo
+                //+image(`favicon.png`, 'logo_img')
+              .header_menu
+                nav.nav
+                  ul.nav_list
+                    - var menu = ['Главная', 'Обо мне', 'Навыки', 'Работы', 'Отзывы', 'Связаться'];
+                    each item in menu
+                      li.nav_item
+                        a(href="#").nav_link #{item}
+              .header_links
+                ul.socials
+                    - var socials = ['insta', 'vk', 'github'];
+
+                    each item in socials
+                      li.socials_item
+                        a(href="#").socials_link
+                          +icon(`${item}`, 'socials_icon')
+              .hero_content
+                .user_info
+                  .user_info-description 
+                    p.first_paragraph Личный сайт
+                    p.second_paragraph веб разработчика
+                  .user_info-name
+                    p.first_paragraph Макарова
+                    p.second_paragraph Анна
+              .hero_bottom-buttons
+                .scroll_down-button Скролл
+                .scroll_down-img
+                  a(href="#").scroll_link
+          section.about
+            .container.container_about
+              .about_left
+                .user
+                  .user_avatar
+                  .user_data
+                    table.user_data-table
+                      - 
+                        var data = [
+                          ['Проживаю', 'Москва'],
+                          ['Возраст', '27 лет'],
+                          ['Родилась', '9 апреля 1992']
+                        ]
+                      each row in data
+                        tr.user_data-row
+                          td.user_data-cell #{row[0]}
+                          td.user_data-cell #{row[1]}
+                    
+              .about_right 
+                .about_welcome Привет, меня зовут
+                .about_name Макарова Анна
+                .about_desc
+                  p.first_desc Я занимаюсь разработкой современных сайтов и приложений.
+                  p.second_desc Мне нравится делать интересные и современные проекты.
+                .about_desc
+                  p.ps_paragraph Этот сайт я сделала в рамках обучения в Школе онлайн образования LoftSchool. Чуть позже я освежу в нём свой контент. А пока посмотрите, как тут всё классно и красиво!
+        .triangles
+          svg.triangles__item.trianles__item--left(viewBox="0 0 1000 100" preserveAspectRatio="none")
+            polygon(
+              points="0,0 0,100 1000,100"
+            )
+          svg.triangles__item.triangles__item--right(viewBox="0 0 1000 100" preserveAspectRatio="none")
+            polygon(
+              points="0,100 1000,100 1000,0"
+            )
+
+                          
