@@ -83,8 +83,8 @@ html(lang="en")
               ul.user-skills
               - 
                 var skills = [
-                  ['frontend', ['html', 'css', 'js']],
-                  ['workflow', ['git', 'gulp', 'webpack']],
+                  ['frontend', ['HTML', 'CSS3', 'JAVASCRIPT', 'Jquery и Vue.js']],
+                  ['workflow', ['GIT', 'Terminal', 'Gulp', 'Webpack']],
                 ]
               each item in skills
                 li.user-skills__item.skills-row
@@ -100,8 +100,60 @@ html(lang="en")
                               circle().skill_circle-under
                                 linear-gradient(to right, #ad00ed 0%, #5500f2 100%)
                           .skill_title #{skill}
-                        //.skill_inner
-                        //.skill_outer
+        section.my_work
+          .container.my_work-container
+        bottom-section
+          section.reviews
+            .container.reviews_container
+              .title.reviews_title
+                h2.reviews_title-text Что обо мне говорят
+              .reviews_slider-buttons
+            .reviews_slider
+              ul.reviews_slider-list
+                - for (var i = 0; i < 2; i++)
+                  li.reviews_slider-items
+                    .quote
+                      .quote_text
+                      .quote_user 
+                        p.quote_user-text Этот парень проходил обучение веб-разработке не где-то, а в LoftSchool! 4,5 месяца только самых тяжелых испытаний и бессонных ночей!
+                      .user.user_reviews
+                    .user_avatar
+                    .user_data
+                      .user_name Ковальчук Дмитрий
+                      .user_description Основатель Loft School
+                    
+          section.form
+            .container.form_container
+          footer.footer
+            .container.footer_container
+              .copyright
+                .copyright_year 2019
+                .copyright_content
+                  .copyright_content-name Анна Макарова
+                  .copyright_content-type Личный сайт веб-разработчика
+              .footer_content
+                nav.nav.nav_footer
+                  ul.nav_list
+                    - var menu = ['Главная', 'Обо мне', 'Навыки', 'Работы', 'Отзывы', 'Связаться'];
+                    each item in menu
+                      li.nav_item
+                        a(href="#").nav_link #{item}
+                .footer_content-col
+                 .left_col
+                  p.left_col-text Этот сайт я сделал в рамках обучения в Школе онлайн образования Loftschool
+                  .footer_links
+                    ul.socials
+                    - var socials = ['insta', 'vk', 'github'];
+                    each item in socials
+                      li.socials_item.socials_item-rounded
+                        a(href="#").socials_link
+                          +icon(`${item}`, 'socials_icon')
+                 .right_col 
+                  p.right_col-text Всегда пишите код так, будто сопровождать его будет склонный к насилию психопат, который знает где вы живете
+                  p.right_col-author Martin Golding
+                
+
+
 
               
 
