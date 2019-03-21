@@ -11,29 +11,26 @@ html(lang="en")
     .wrapper
       .maincontent
         .welcome_section
-          //style=`background: url('${require('./images/content/welcome_bg.png')}')
-        
-        
           section.hero
             .container.hero_container
               header.header
-              .logo
-                //+image(`favicon.png`, 'logo_img')
-              .header_menu
-                nav.nav
-                  ul.nav_list
-                    - var menu = ['Главная', 'Обо мне', 'Навыки', 'Работы', 'Отзывы', 'Связаться'];
-                    each item in menu
-                      li.nav_item
-                        a(href="#").nav_link #{item}
-              .header_links
-                ul.socials
-                    - var socials = ['insta', 'vk', 'github'];
+                .logo
+                  +image('content/ba.png', 'logo_img')
+                .header_menu
+                  nav.nav
+                    ul.nav_list
+                      - var menu = ['Главная', 'Обо мне', 'Навыки', 'Работы', 'Отзывы', 'Связаться'];
+                      each item in menu
+                        li.nav_item
+                          a(href="#").nav_link #{item}
+                .header_links
+                  ul.socials
+                      - var socials = ['insta', 'vk', 'github'];
 
-                    each item in socials
-                      li.socials_item
-                        a(href="#").socials_link
-                          +icon(`${item}`, 'socials_icon')
+                      each item in socials
+                        li.socials_item
+                          a(href="#").socials_link
+                            +icon(`${item}`, 'socials_icon')
               .hero_content
                 .user_info
                   .user_info-description 
@@ -46,11 +43,13 @@ html(lang="en")
                 .scroll_down-button Скролл
                 .scroll_down-img
                   a(href="#").scroll_link
+                    +icon("scroll", "scroll_icon")
           section.about
             .container.container_about
               .about_left
                 .user
                   .user_avatar
+                    +image('content/user.jpg', 'user_img')
                   .user_data
                     table.user_data-table
                       - 
@@ -62,7 +61,7 @@ html(lang="en")
                       each row in data
                         tr.user_data-row
                           td.user_data-cell #{row[0]}
-                          td.user_data-cell #{row[1]}
+                          td.user_data-string #{row[1]}
                     
               .about_right 
                 .about_welcome Привет, меня зовут
@@ -97,30 +96,39 @@ html(lang="en")
                               circle(
                                 r="62" cx="67" cy="67"
                               ).skill_circle-inner
-                              circle().skill_circle-under
-                                linear-gradient(to right, #ad00ed 0%, #5500f2 100%)
+                              circle(
+                                r="62" cx="67" cy="67"
+                              ).skill_circle-under
                           .skill_title #{skill}
         section.my_work
           .container.my_work-container
-        bottom-section
+        .bottom-section
           section.reviews
             .container.reviews_container
-              .title.reviews_title
-                h2.reviews_title-text Что обо мне говорят
-              .reviews_slider-buttons
-            .reviews_slider
-              ul.reviews_slider-list
-                - for (var i = 0; i < 2; i++)
-                  li.reviews_slider-items
-                    .quote
-                      .quote_text
-                      .quote_user 
-                        p.quote_user-text Этот парень проходил обучение веб-разработке не где-то, а в LoftSchool! 4,5 месяца только самых тяжелых испытаний и бессонных ночей!
-                      .user.user_reviews
-                    .user_avatar
-                    .user_data
-                      .user_name Ковальчук Дмитрий
-                      .user_description Основатель Loft School
+              .reviews_top
+                .title.reviews_title
+                  h2.title.reviews_title-text Что обо мне говорят
+                .reviews_slider-buttons
+                  a(href="#").review_btn-link
+                    .review_btn.reviews_slider-buttons--right
+                      +icon("arrow-down", "review_svg-right")
+                  a(href="#").review_btn-link
+                    .review_btn.reviews_slider-buttons--left
+                      +icon("arrow-down", "review_svg-left")
+              .reviews_slider
+                ul.reviews_slider-list
+                  - for (var i = 0; i < 2; i++)
+                    li.reviews_slider-items
+                      .quote
+                        .quote_text
+                        .quote_user 
+                          p.quote_user-text Эта девушка проходила обучение веб-разработке не где-то, а в LoftSchool! 4,5 месяца только самых тяжелых испытаний и бессонных ночей!
+                        .user.user_reviews
+                      .user_avatar 
+                        //+image('content/kov.png', 'user_review-img')
+                      .user_data
+                        .user_name Ковальчук Дмитрий
+                        .user_description Основатель Loft School
                     
           section.form
             .container.form_container
