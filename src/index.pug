@@ -39,11 +39,11 @@ html(lang="en")
                   .user_info-name
                     p.first_paragraph Макарова
                     p.second_paragraph Анна
-              .hero_bottom-buttons
-                .scroll_down-button Скролл
-                .scroll_down-img
-                  a(href="#").scroll_link
-                    +icon("scroll", "scroll_icon")
+                .hero_bottom-buttons
+                  .scroll_down-button Скролл
+                  .scroll_down-img
+                    a(href="#").scroll_link
+                      +icon("scroll", "scroll_icon")
           section.about
             .container.container_about
               .about_left
@@ -76,9 +76,10 @@ html(lang="en")
             .values_img 
             //рюкзак при помощт бекграунд
             .values_text
-              h2.title.values_title Чем я могу быть полезен вам
-              .values_description 
-                p.desc.values_description_desc  Этот сайт я сделал в рамках обучения в Школе онлайн образования LoftSchool. Чуть позже я освежу в нём свой контент. А пока посмотрите, как тут всё классно и красиво!
+              .values_content
+                h2.title.values_title Чем я могу быть полезен вам
+                .values_description 
+                  p.desc.values_description_desc  Этот сайт я сделал в рамках обучения в Школе онлайн образования LoftSchool. Чуть позже я освежу в нём свой контент. А пока посмотрите, как тут всё классно и красиво!
               ul.user-skills
               - 
                 var skills = [
@@ -102,6 +103,41 @@ html(lang="en")
                           .skill_title #{skill}
         section.my_work
           .container.my_work-container
+            .title.mywork_title Мои работы
+            .my_work-content
+              .slider
+                .header.slider_header
+                  .logo.slider_logo Pr
+                  .header_menu.header_menu-slider
+                    nav.nav.nav_slider
+                      ul.nav_list.nav_list-slider
+                        - var menu = ['Главная', 'Обо мне', 'Мои навыки', 'Портфолио', 'Отзывы', 'Контакты'];
+                        each item in menu
+                          li.nav_item.nav_item-slider
+                            a(href="#").nav_link #{item}
+                  .header_links.header_links-slider
+                    a(href="").phone_number 8(xxx) xxx-xx-xx
+                .slider_content
+                  .slider_content-title
+                    p.slider_content-title--par Превью
+                    p.slider_content-title--par работы
+                  .slider_content-text
+                    p.slider_content-text--par Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempore dolorum animi porro? Accusantium, praesentium. Pariatur enim quod suscipit sed excepturi, aliquid voluptates voluptas culpa! Ad provident error dolorum libero culpa.
+              .my_work-school
+                .my_work-skill
+                  .my_work-skill--types 
+                    p.skill_type.skill_type-up html
+                  .my_work-skill--types 
+                    p.skill_type.skill_type-up css
+                  .my_work-skill--types
+                    p.skill_type JavaScript
+                .my_work-web
+                  p.title.my_work-web--title Сайт школы образования
+                  p.my_work-web--text Эта девушка проходила обучение веб-разработке не где-то, а в LoftSchool! 2 месяца только самых тяжелых испытаний и бессонных ночей!
+                a(href="").my_work-link
+                 .my_work-link-icon 
+                  +icon("link", "my_work-svg")
+                 .my_work-link-school Loft School
         .bottom-section
           section.reviews
             .container.reviews_container
@@ -123,22 +159,39 @@ html(lang="en")
                         .quote_text
                         .quote_user 
                           p.quote_user-text Эта девушка проходила обучение веб-разработке не где-то, а в LoftSchool! 4,5 месяца только самых тяжелых испытаний и бессонных ночей!
-                        .user.user_reviews
-                      .user_avatar 
-                        //+image('content/kov.png', 'user_review-img')
-                      .user_data
-                        .user_name Ковальчук Дмитрий
-                        .user_description Основатель Loft School
+                      .user.user_reviews
+                        .user_avatar 
+                          //+image('content/kov.png', 'user_review-img')
+                        .user_data
+                          .user_name Ковальчук Дмитрий
+                          .user_description Основатель Loft School
                     
           section.form
             .container.form_container
+              .title.form_title Связаться со мной
+              form(action="").order_form
+                .inputs
+                  label(for="").input_label
+                    .input_name Введите ваше имя
+                    input(type="text" placeholder="Ковальчук Дмитрий").input_form.input_form-name
+                  label(for="").input_label
+                    .input_name Введите ваш email
+                    input(type="text" placeholder="loftschool@study.com").input_form.input_form-mail
+                label(for="").textarea
+                  .textarea_name Сообщение к письму
+                  textarea(name="", cols="30", rows="10" placeholder="Требуется ваша помощь в создании сайта. Интересуют сроки и цена вопроса" class="textarea_form").
+                input(type="submit", value="Отправить").sibmit_button
           footer.footer
             .container.footer_container
               .copyright
                 .copyright_year 2019
                 .copyright_content
-                  .copyright_content-name Анна Макарова
-                  .copyright_content-type Личный сайт веб-разработчика
+                  .copyright_content-name 
+                    p.name Анна
+                    p.surname Макарова
+                  .copyright_content-type
+                    p.web Личный сайт
+                    p.web веб-разработчика
               .footer_content
                 nav.nav.nav_footer
                   ul.nav_list
@@ -148,17 +201,23 @@ html(lang="en")
                         a(href="#").nav_link #{item}
                 .footer_content-col
                  .left_col
-                  p.left_col-text Этот сайт я сделал в рамках обучения в Школе онлайн образования Loftschool
+                  .left_col-text
+                    p.col-text Этот сайт я сделал в рамках обучения в
+                    p.col-text Школе онлайн образования Loftschool
                   .footer_links
-                    ul.socials
-                    - var socials = ['insta', 'vk', 'github'];
-                    each item in socials
-                      li.socials_item.socials_item-rounded
-                        a(href="#").socials_link
-                          +icon(`${item}`, 'socials_icon')
+                    ul.socials.socials_footer
+                      - var socials = ['insta', 'vk', 'github'];
+                      each item in socials
+                        li.socials_item.socials_item-rounded
+                          a(href="#").socials_link
+                            +icon(`${item}`, 'socials_icon.socials_icon-footer')
                  .right_col 
-                  p.right_col-text Всегда пишите код так, будто сопровождать его будет склонный к насилию психопат, который знает где вы живете
-                  p.right_col-author Martin Golding
+                  .right_col-content
+                    p.right_col-text Всегда пишите код так, будто сопровождать его будет
+                    p.right_col-text склонный к насилию психопат, который знает где
+                    p.right_col-text вы живете
+                  .autor
+                    p.right_col-author Martin Golding
                 
 
 
