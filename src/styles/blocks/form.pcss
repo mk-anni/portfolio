@@ -30,8 +30,14 @@
     outline: none !important;
   }
 }
+.input_label-name {
+  &::before {
+    content: '';
+    background: svg-load('../images/icons/user.svg') no-repeat;
+    
+  }
+}
 .input_form-name {
-  background-image: url('../images/icons/user.svg');
   background-size: 26px 30px;
 }
 .textarea_name {
@@ -47,6 +53,7 @@
   width: 864px;
   height: 80px;
   resize: none;
+  margin-bottom: 60px;
   &:focus {
     border-bottom: #5500f2 solid 2px;
     outline: none !important;
@@ -60,4 +67,5 @@
   font-weight: 700;
   text-transform: uppercase;
   border-radius: 40px 5px;
+  display: block;
 }

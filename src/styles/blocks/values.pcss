@@ -1,12 +1,15 @@
-.values_text {
-  &::before {
-    content: '';
-    background: url("../images/content/bag.png") no-repeat;
-    width: 712px;
-    height: 627px;
-    display: block;
-  }
+.container_values {
+  display: flex;
+  height: 100%;
 }
+.values_img {
+  background: url("../images/content/bag.png") center center /cover no-repeat;
+  width: 800px;
+  height: 627px;
+  position: relative;
+  left: -130px;
+}
+
 .values_title {
   margin-bottom: 64px;
 }
@@ -17,4 +20,17 @@
 .user-skills {
   display: flex;
   flex-direction: column;
+}
+.skill_title {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+.skill_circle-under {
+  color: red;
+  border: 20px red;
+}
+.skill_circle-inner {
+  border: 10px red;
 }

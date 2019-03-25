@@ -39,11 +39,10 @@ html(lang="en")
                   .user_info-name
                     p.first_paragraph Макарова
                     p.second_paragraph Анна
-                .hero_bottom-buttons
+                a.hero_bottom-buttons
                   .scroll_down-button Скролл
                   .scroll_down-img
-                    a(href="#").scroll_link
-                      +icon("scroll", "scroll_icon")
+                    +icon("scroll", "scroll_icon")
           section.about
             .container.container_about
               .about_left
@@ -106,6 +105,7 @@ html(lang="en")
             .title.mywork_title Мои работы
             .my_work-content
               .slider
+                +image('content/slider1.png', 'slider_img1')
               .my_work-school
                 .my_work-skill
                   .my_work-skill--types 
@@ -144,7 +144,7 @@ html(lang="en")
                           p.quote_user-text Эта девушка проходила обучение веб-разработке не где-то, а в LoftSchool! 4,5 месяца только самых тяжелых испытаний и бессонных ночей!
                       .user.user_reviews
                         .user_avatar 
-                          //+image('content/kov.png', 'user_review-img')
+                          +image('content/kov.png', 'user_review-img')
                         .user_data
                           .user_name Ковальчук Дмитрий
                           .user_description Основатель Loft School
@@ -154,12 +154,12 @@ html(lang="en")
               .title.form_title Связаться со мной
               form(action="").order_form
                 .inputs
-                  label(for="").input_label
+                  label(for="").input_label.input_label-name
                     .input_name Введите ваше имя
                     input(type="text" placeholder="Ковальчук Дмитрий").input_form.input_form-name
-                  label(for="").input_label
+                  label(for="").input_label.input_label-mail
                     .input_name Введите ваш email
-                    input(type="text" placeholder="loftschool@study.com").input_form.input_form-mail
+                    input(type="email" placeholder="loftschool@study.com").input_form.input_form-mail
                 label(for="").textarea
                   .textarea_name Сообщение к письму
                   textarea(name="", cols="30", rows="10" placeholder="Требуется ваша помощь в создании сайта. Интересуют сроки и цена вопроса" class="textarea_form").
