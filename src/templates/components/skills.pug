@@ -1,0 +1,23 @@
+script(type='text/x-template')#skills-list
+  .values_widget-container
+    ul.user-skills
+      li.user-skills__item
+        skills-row 
+
+script(type='text/x-template')#skills-row        
+  .skills-row
+    h3.skills-row__title Frontend
+    ul.skills-row__list
+      li.skills-row__item
+        skill
+                
+script(type='text/x-template')#skill                
+  .skill
+    svg(viewBox="0 0 134 134" preserveAspectRatio="none").skill_shape
+      circle(
+        r="62" cx="67" cy="67"
+      ).skill_circle-inner
+      circle(
+        r="62" cx="67" cy="67"
+      ).skill_circle-under
+    .skill_title skill

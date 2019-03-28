@@ -79,27 +79,30 @@ html(lang="en")
                 h2.title.values_title Чем я могу быть полезен вам
                 .values_description 
                   p.desc.values_description_desc  Этот сайт я сделал в рамках обучения в Школе онлайн образования LoftSchool. Чуть позже я освежу в нём свой контент. А пока посмотрите, как тут всё классно и красиво!
-              ul.user-skills
-              - 
-                var skills = [
-                  ['frontend', ['HTML', 'CSS3', 'JAVASCRIPT', 'Jquery и Vue.js']],
-                  ['workflow', ['GIT', 'Terminal', 'Gulp', 'Webpack']],
-                ]
-              each item in skills
-                li.user-skills__item.skills-row
-                  h3.skills-row__title #{item[0]}
-                  ul.skills-row__list
-                    each skill in item[1]
-                      li.skills-row__item
-                        .skill
-                          svg(viewBox="0 0 134 134" preserveAspectRatio="none").skill_shape
-                              circle(
-                                r="62" cx="67" cy="67"
-                              ).skill_circle-inner
-                              circle(
-                                r="62" cx="67" cy="67"
-                              ).skill_circle-under
-                          .skill_title #{skill}
+              .values_widget
+                #skills-component
+                .values_widget-container
+                  ul.user-skills
+                  - 
+                    var skills = [
+                      ['frontend', ['HTML', 'CSS3', 'JAVASCRIPT', 'Jquery и Vue.js']],
+                      ['workflow', ['GIT', 'Terminal', 'Gulp', 'Webpack']],
+                    ]
+                  each item in skills
+                    li.user-skills__item.skills-row
+                      h3.skills-row__title #{item[0]}
+                      ul.skills-row__list
+                        each skill in item[1]
+                          li.skills-row__item
+                            .skill
+                              svg(viewBox="0 0 134 134" preserveAspectRatio="none").skill_shape
+                                  circle(
+                                    r="62" cx="67" cy="67"
+                                  ).skill_circle-inner
+                                  circle(
+                                    r="62" cx="67" cy="67"
+                                  ).skill_circle-under
+                              .skill_title #{skill}
         section.my_work
           .container.my_work-container
             .title.mywork_title Мои работы
