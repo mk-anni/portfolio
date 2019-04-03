@@ -1,20 +1,27 @@
-.reviews_slider-list {
+.reviews__slider--list {
   display: flex;
 }
-.reviews_slider-items {
+.reviews__slider--items {
+  margin-right: 82px;
+  &:last-child {
+    margin-right: none;
+  }
   &::before {
     content: '';
     background: url('../images/icons/quote.svg') no-repeat;
     display: block;
   }
 }
-.user_reviews {
+.user__reviews {
   display: flex;
 }
 .quote {
   margin-bottom: 30px;
 }
-.user_avatar {
+.quote__user--text {
+  width: 323px;
+}
+.user__avatar--reviews {
   width: 75px;
   height: 75px;
   border-radius: 50%;
@@ -22,8 +29,25 @@
   display: flex;
   align-items: center;
   justify-content: center;
+  margin-right: 28px;
 }
-.user_review-img {
+.user__review--img {
   height: 100%;
   width: 100%;
+  object-fit: cover;
+  object-position: top;
+}
+.user__data {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.user__name {
+  font-size: 18px;
+  font-weight: 700;
+}
+.user__description {
+  opacity: 0.3;
+  font-size: 16px;
 }

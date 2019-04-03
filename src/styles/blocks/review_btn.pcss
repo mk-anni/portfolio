@@ -1,7 +1,7 @@
-.reviews_slider-buttons {
+.reviews__slider--buttons {
   display: flex;
 }
-.review_btn {
+.review__btn {
   width: 51px;
   height: 51px;
   border: #414c63 solid 1px;
@@ -11,12 +11,18 @@
   align-items: center;
   margin-right: 33px;
 }
-.review_svg-right {
+.review__btn--link {
+  background: transparent;
+  &:active {
+    border: none;
+  }
+}
+.review__svg--right {
   width: 6px;
   height: 10px;
   transform: rotate(180deg);
 }
-.review_svg-left {
+.review__svg--left {
   width: 6px;
   height: 10px;
 }

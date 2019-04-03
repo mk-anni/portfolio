@@ -1,36 +1,34 @@
-.container_values {
+.container__values {
   display: flex;
   height: 100%;
 }
-.values_img {
-  background: url("../images/content/bag.png") center center /cover no-repeat;
+.values__img {
+  background-image: url("../images/content/bag.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
   width: 800px;
-  height: 627px;
+  min-height: 100%;
   position: relative;
-  left: -130px;
+  left: -200px;
 }
 
-.values_title {
+.values__title {
   margin-bottom: 64px;
 }
-.values_description {
+.values__description {
   opacity: 0.5;
   margin-bottom: 92px;
+  width: 585px;
 }
 .user-skills {
   display: flex;
   flex-direction: column;
 }
-.skill_title {
+.skill__title {
   position: absolute;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
 }
-.skill_circle-under {
-  color: red;
-  border: 20px red;
-}
-.skill_circle-inner {
-  border: 10px red;
-}
+
