@@ -94,7 +94,9 @@ html(lang="ru")
                                   circle(
                                     r="62" cx="67" cy="67"
                                   ).skill__circle--under
-                                  linear-gradient(to right, #ad00ed 0%, #5500f2 100%)
+                                  linearGradient(id="gradient" x1="0%" y1="0%" x2="100%" y2="0")
+                                    stop(offset="0%" stop-color="#5500f2")
+                                    stop(offset="100%" stop-color="#8b00ef")
                               .skill__title #{skill}
         section.my-work
           .container.container__my-work
